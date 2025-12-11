@@ -1,6 +1,6 @@
 {{- define "main" }}
 <div>
-  <p>{{ .Title }}:</p>
+  <h1>{{ .Title }}:</h1>
   <ul>
     {{- $orderkey := default "date" .Site.Params.orderPageParam }}
     {{- $orderrev := default true .Site.Params.orderPageReverse }}
@@ -13,6 +13,7 @@
         <a href="{{ .RelPermalink }}">{{ .Title }}</a>
       </div>
       {{ partial "post_meta.html" . }}
+      <p>{{ .Description }}</p>
     </li>
     {{- end }}
   </ul>
